@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-void main(){
+
+void main() {
   runApp(MaterialApp(
     home: Home(),
   ));
@@ -19,7 +20,40 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         backgroundColor: Colors.blue,
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.refresh), onPressed: (){ debugPrint("Refresh Clicked."); })
+          IconButton(
+              icon: Icon(Icons.refresh),
+              onPressed: () {
+                debugPrint("Refresh Clicked.");
+              })
+        ],
+      ),
+      backgroundColor: Colors.white,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Icon(Icons.person_pin, size: 120.0, color: Colors.blue),
+          TextField(
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+                labelText: "Weight: (KG)",
+                labelStyle: TextStyle(color: Colors.blue)),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.blue,
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold),
+          ),
+          TextField(
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(
+                labelText: "Height: (CM)",
+                labelStyle: TextStyle(color: Colors.blue)),
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.blue,
+                fontSize: 25.0,
+                fontWeight: FontWeight.bold),
+          )
         ],
       ),
     );
